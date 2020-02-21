@@ -4,15 +4,20 @@ Advanced Page Builder Fields is a small collection of custom fields which can be
 
 ## Getting Started
 
-Clone into your site's wp-content/plugins folder and activate the plugin through your WordPress admin
+Clone or download, copy the 'advanced-page-builder-fields' folder into your site's wp-content/plugins folder, then activate the plugin through your WordPress admin.
 
 ## The fields
 
 * **APBF Select**: A [Select2](https://select2.org/) powered select box with search functionality for selecting single posts.
-* **APBF MultiSelect**: An ajax powered control with optional search/filter functionality enabling you to select multiple posts of any post type.
+![APBF Select](img/apbf-select.png)
+* **APBF MultiSelect**: An ajax powered control with optional search/filter functionality enabling you to select multiple posts of any post type. Selected posts can be re-ordered.
+![APBF MultiSelect](img/apbf-multiselect.png)
 * **APBF Toggle**: A simple on/off toggle switch.
+![APBF Toggle](img/apbf-toggle.png)
 * **APBF Message**: A simple non-input field for displaying an informational message, for example to instruct users how to use your widget.
+![APBF Message](img/apbf-message.png)
 * **APBF Tabs**: Group related form fields into tabbed sections to neaten up your plugin interface.
+![APBF Tabs](img/apbf-tabs.png)
 
 ## Usage
 
