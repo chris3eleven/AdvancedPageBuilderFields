@@ -45,7 +45,7 @@ $form_options = array(
 * label _(string)_ - Render a label for the field with the given value.
 * description _(string)_ - Render small italic text below the field to describe the field's purpose.
 * post_types _(array, optional)_ - The post types that should be included. Defaults to all.
-* default _(string, options)_ - The post type that should be displayed by default. Defaults to posts.
+* post_type _(string, optional)_ - The post type that should be displayed by default. Defaults to posts.
 * filter_post_types _(boolean, optional)_ - whether the post types filter should be displayed. Defaults to true.
 * filter_taxonomies _(boolean, optional)_ - whether the taxonomies filter should be displayed. Defaults to true.
 * search_enabled _(boolean, optional)_ - whether the search field should be displayed. Defaults to true.
@@ -57,7 +57,7 @@ $form_options = array(
     'label' => __( 'Select some posts', 'widget-form-fields-text-domain' ),
     'description' => __( 'Choose multiple posts of multiple types.' ),
     'post_types' => array( 'post', 'page' ),
-    'default' => 'post',
+    'post_type' => 'post',
     'filter_post_types' => true,
     'filter_taxonomies' => true,
     'search_enabled' => true
