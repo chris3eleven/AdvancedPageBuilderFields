@@ -108,7 +108,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	}
 
 	protected function render_field( $value, $instance ) {
-		$post_type = $this->product_type ? $this->product_type : 'post';
+		$post_type = $this->post_type ? $this->post_type : 'post';
 
 		if ( is_array( $this->taxonomies ) ) {
 			if ( !in_array( $post_type, $this->taxonomies ) ) $post_type = $this->taxonomies[ 0 ];
