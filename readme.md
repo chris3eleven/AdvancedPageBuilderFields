@@ -36,11 +36,11 @@ $args = array(
 
 $form_options = array(
     'some_post' => array(
-			'type' => 'apbf-select',
-			'label' => __( 'Select a post', 'widget-form-fields-text-domain' ),
-			'query' => $args,
-			'description' => __( 'Choose a single post.', 'widget-form-fields-text-domain' )
-		)
+		'type' => 'apbf-select',
+		'label' => __( 'Select a post', 'widget-form-fields-text-domain' ),
+		'query' => $args,
+		'description' => __( 'Choose a single post.', 'widget-form-fields-text-domain' )
+	)
 );
 ```
 
@@ -59,14 +59,14 @@ $form_options = array(
 ```
 $form_options = array(
 	'some_posts' => array(
-    'type' => 'apbf-multiselect',
-    'label' => __( 'Select some posts', 'widget-form-fields-text-domain' ),
-    'description' => __( 'Choose multiple posts of multiple types.' ),
-    'post_types' => array( 'post', 'page' ),
-    'default' => 'post',
-    'filter_post_types' => true,
-    'filter_taxonomies' => true,
-    'search_enabled' => true
+		'type' => 'apbf-multiselect',
+		'label' => __( 'Select some posts', 'widget-form-fields-text-domain' ),
+		'description' => __( 'Choose multiple posts of multiple types.' ),
+		'post_types' => array( 'post', 'page' ),
+		'default' => 'post',
+		'filter_post_types' => true,
+		'filter_taxonomies' => true,
+		'search_enabled' => true
 	)
 );
 ```
@@ -81,9 +81,9 @@ $form_options = array(
 ```
 $form_options = array(
 	'some_boolean' => array(
-    'type' => 'apbf-toggle',
-    'label' => __( 'This thing', 'widget-form-fields-text-domain' ),
-    'description' => 'Turn this thing on.'
+		'type' => 'apbf-toggle',
+		'label' => __( 'This thing', 'widget-form-fields-text-domain' ),
+		'description' => 'Turn this thing on.'
 	)
 );
 ```
@@ -98,9 +98,9 @@ $form_options = array(
 ```
 $form_options = array(
 	'some_message' => array(
-    'type' => 'apbf-message',
-    'label' => __( 'This is an APBF Message field', 'widget-form-fields-text-domain' ),
-    'description' => 'Any information you wish to relay.'
+		'type' => 'apbf-message',
+		'label' => __( 'This is an APBF Message field', 'widget-form-fields-text-domain' ),
+		'description' => 'Any information you wish to relay.'
 	)
 );
 ```
@@ -115,24 +115,25 @@ $form_options = array(
 ```
 $form_options = array(
 	'some_tabs' => array(
-    'type' => 'apbf-tabs',
-		'fields' => array(
-			'tab1' => array(
-				'type' => 'apbf-tab',
-				'label' => __( 'The first tab', 'widget-form-fields-text-domain' ),
-			),
-			'some_text' => array(
-        'type' => 'text',
-        'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
-	    ),
-	    'tab2' => array(
-				'type' => 'apbf-tab',
-				'label' => __( 'The second tab', 'widget-form-fields-text-domain' ),
-			),
-			'some_more_text' => array(
-        'type' => 'text',
-        'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
-	    )
+		'type' => 'apbf-tabs',
+			'fields' => array(
+				'tab1' => array(
+					'type' => 'apbf-tab',
+					'label' => __( 'The first tab', 'widget-form-fields-text-domain' ),
+				),
+				'some_text' => array(
+					'type' => 'text',
+					'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
+				),
+				'tab2' => array(
+					'type' => 'apbf-tab',
+					'label' => __( 'The second tab', 'widget-form-fields-text-domain' ),
+				),
+				'some_more_text' => array(
+					'type' => 'text',
+					'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
+				)
+			)
 		)
 	)
 );
