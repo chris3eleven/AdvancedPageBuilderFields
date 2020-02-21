@@ -25,6 +25,10 @@ class APBF_Widget_Field_APBF_Toggle extends SiteOrigin_Widget_Field_Base {
 		// Empty override. This field renders it's own label in the render_field() function.
 	}
 
+	protected function render_after_field( $value, $instance ) {
+		// Empty override. This field renders it's own description in the render_field() function.
+	}
+
 	protected function sanitize_field_input( $value, $instance ) {
 		return ! empty( $value ) && ! ( is_string( $value ) && $value === 'false' );
 	}
