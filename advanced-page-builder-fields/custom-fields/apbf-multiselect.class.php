@@ -6,7 +6,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	/**
 	 * The post type selected by default
 	 */
-	protected $default;
+	protected $product_type;
 
 	/**
 	 * Boolean to set whether the post types filter should be displayed, defaults to true
@@ -108,10 +108,10 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	}
 
 	protected function render_field( $value, $instance ) {
-		$default = $this->default ? $this->default : 'post';
+		$product_type = $this->product_type ? $this->product_type : 'post';
 
 		if ( is_array( $this->taxonomies ) ) {
-			if ( !in_array( $default, $this->taxonomies ) ) $default = $this->taxonomies[ 0 ];
+			if ( !in_array( $product_type, $this->taxonomies ) ) $product_type = $this->taxonomies[ 0 ];
 		}
 
 		$filter_post_types = isset( $this->filter_post_types ) ? $this->filter_post_types : true;
@@ -135,7 +135,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 									?>
 									<select>
 										<?php foreach( $post_types as $key => $name ) { ?>
-											<option value="post_type:<?php echo $key; ?>" <?php selected( $key, $default ); ?>><?php echo $name; ?></option>
+											<option value="post_type:<?php echo $key; ?>" <?php selected( $key, $product_type ); ?>><?php echo $name; ?></option>
 										<?php } ?>
 									</select>
 								<?php }
@@ -160,7 +160,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 			<?php } ?>
 			<div class="apbf-multiselect__row">
 				<div class="apbf-multiselect__col">
-					<ul class="apbf-multiselect__posts apbf-multiselect__posts-posts" data-post_type="<?php echo $default; ?>">
+					<ul class="apbf-multiselect__posts apbf-multiselect__posts-posts" data-post_type="<?php echo $product_type; ?>">
 					</ul>
 				</div>
 				<div class="apbf-multiselect__col">
