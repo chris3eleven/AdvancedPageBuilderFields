@@ -6,7 +6,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	/**
 	 * The post type selected by default
 	 */
-	protected $post_type;
+	protected $default;
 
 	/**
 	 * Boolean to set whether the post types filter should be displayed, defaults to true
@@ -108,10 +108,10 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	}
 
 	protected function render_field( $value, $instance ) {
-		$post_type = $this->post_type ? $this->post_type : 'post';
+		$default = $this->default ? $this->default : 'post';
 
 		if ( is_array( $this->taxonomies ) ) {
-			if ( !in_array( $post_type, $this->taxonomies ) ) $post_type = $this->taxonomies[ 0 ];
+			if ( !in_array( $default, $this->taxonomies ) ) $default = $this->taxonomies[ 0 ];
 		}
 
 		$filter_post_types = isset( $this->filter_post_types ) ? $this->filter_post_types : true;
@@ -135,7 +135,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 									?>
 									<select>
 										<?php foreach( $post_types as $key => $name ) { ?>
-											<option value="post_type:<?php echo $key; ?>" <?php selected( $key, $post_type ); ?>><?php echo $name; ?></option>
+											<option value="post_type:<?php echo $key; ?>" <?php selected( $key, $default ); ?>><?php echo $name; ?></option>
 										<?php } ?>
 									</select>
 								<?php }
@@ -160,12 +160,13 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 			<?php } ?>
 			<div class="apbf-multiselect__row">
 				<div class="apbf-multiselect__col">
-					<ul class="apbf-multiselect__posts apbf-multiselect__posts-posts" data-post_type="<?php echo $post_type; ?>">
+					<ul class="apbf-multiselect__posts apbf-multiselect__posts-posts" data-post_type="<?php echo $default; ?>">
 					</ul>
 				</div>
 				<div class="apbf-multiselect__col">
 					<ul class="apbf-multiselect__posts apbf-multiselect__posts-selected ui-sortable"></ul>
-					<input type="hidden" class="apbf-multiselect__value" name="<?php echo esc_attr( $this->element_name ) ?>" id="<?php echo esc_attr( $this->element_id ) ?>" value="<?php echo esc_attr( $value ) ?>">
+					<?php $value = !$value ? '[]' : json_encode( $value ); ?>
+					<input type="hidden" class="apbf-multiselect__value" name="<?php echo esc_attr( $this->element_name ) ?>" id="<?php echo esc_attr( $this->element_id ) ?>" value="<?php echo $value; ?>">
 				</div>
 			</div>
 		</div>
@@ -173,6 +174,7 @@ class APBF_Widget_Field_APBF_MultiSelect extends SiteOrigin_Widget_Field_Base {
 	}
 
 	protected function sanitize_field_input( $value, $instance ) {
+		$value = is_array( $value ) ? $value : json_decode( $value );
 		return $value;
 	}
 

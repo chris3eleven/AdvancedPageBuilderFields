@@ -7,7 +7,7 @@
 		$selectedPosts = [];
 		// iterate through the items in the selected posts list, adding their ids to the above-declared array
 		$listBox.find( '.apbf-multiselect__posts-selected' ).find( '.apbf-multiselect__item' ).each( function() {
-			if ( $( this ).attr( 'data-id' ) != undefined ) $selectedPosts.push( $( this ).attr( 'data-id' ) );
+			if ( $( this ).attr( 'data-id' ) != undefined ) $selectedPosts.push( parseInt( $( this ).attr( 'data-id' ) ) );
 		} );
 		// update the listbox's value field with a stringy-fied version of the $selectedPosts array
 		$listBox.find( '.apbf-multiselect__value' ).val( JSON.stringify( $selectedPosts ) );
