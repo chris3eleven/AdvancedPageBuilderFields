@@ -8,8 +8,8 @@ Clone into your site's wp-content/plugins folder and activate the plugin through
 
 ## The fields
 
-* **APBF Select**: A [Select2](https://select2.org/) powered select box with search functionality for selecting single posts of whichever post type you specify.
-* **APBF MultiSelect**: An ajax powered control with search functionality enabling you to select multiple posts of whichever post type you specify.
+* **APBF Select**: A [Select2](https://select2.org/) powered select box with search functionality for selecting single posts.
+* **APBF MultiSelect**: An ajax powered control with optional search/filter functionality enabling you to select multiple posts of any post type.
 * **APBF Toggle**: A simple on/off toggle switch.
 * **APBF Message**: A simple non-input field for displaying an informational message, for example to instruct users how to use your widget.
 * **APBF Tabs**: Group related form fields into tabbed sections to neaten up your plugin interface.
