@@ -31,7 +31,7 @@ $args = array(
 );
 
 $form_options = array(
-    'some_post' => array(
+  'some_post' => array(
     'type' => 'apbf-select',
     'label' => __( 'Select a post', 'widget-form-fields-text-domain' ),
     'query' => $args,
