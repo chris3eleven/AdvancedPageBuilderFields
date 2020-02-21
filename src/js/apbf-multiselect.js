@@ -109,7 +109,7 @@
 			$selectedPosts = $( this ).find( '.apbf-multiselect__value' ).val();
 			if ( $selectedPosts != '' && $selectedPosts != undefined ) {
 				$selectedPosts = JSON.parse( $selectedPosts ).toString();
-				if ( !$.isEmptyObject( $selectedPosts ) )	getListItems( $( this ).find( '.apbf-multiselect__posts-selected' ), null, null, null, null, $selectedPosts, -1, 'custom', 1, true );
+				if ( $.isArray( $selectedPosts ) && $selectedPosts.length ) getListItems( $( this ).find( '.apbf-multiselect__posts-selected' ), null, null, null, null, $selectedPosts, -1, 'custom', 1, true );
 			}		
 
 			// make the selected posts list sortable
