@@ -6,8 +6,6 @@ Advanced Page Builder Fields is a small collection of custom fields which can be
 
 Clone into your site's wp-content/plugins folder and activate the plugin through your WordPress admin
 
-
-
 ## The fields
 
 * **APBF Select**: A [Select2](https://select2.org/) powered select box with search functionality for selecting single posts of whichever post type you specify.
@@ -15,8 +13,6 @@ Clone into your site's wp-content/plugins folder and activate the plugin through
 * **APBF Toggle**: A simple on/off toggle switch.
 * **APBF Message**: A simple non-input field for displaying an informational message, for example to instruct users how to use your widget.
 * **APBF Tabs**: Group related form fields into tabbed sections to neaten up your plugin interface.
-
-
 
 ## Usage
 
@@ -28,23 +24,21 @@ Clone into your site's wp-content/plugins folder and activate the plugin through
 
 ```
 $args = array(
-	'post_type' => 'post',
-	'post_status' => 'publish',
-	'orderby' => 'publish_date',
-	'order' => 'DESC'
+  'post_type' => 'post',
+  'post_status' => 'publish',
+  'orderby' => 'publish_date',
+  'order' => 'DESC'
 );
 
 $form_options = array(
     'some_post' => array(
-		'type' => 'apbf-select',
-		'label' => __( 'Select a post', 'widget-form-fields-text-domain' ),
-		'query' => $args,
-		'description' => __( 'Choose a single post.', 'widget-form-fields-text-domain' )
-	)
+    'type' => 'apbf-select',
+    'label' => __( 'Select a post', 'widget-form-fields-text-domain' ),
+    'query' => $args,
+    'description' => __( 'Choose a single post.', 'widget-form-fields-text-domain' )
+  )
 );
 ```
-
-
 
 ### APBF MultiSelect
 
@@ -58,20 +52,18 @@ $form_options = array(
 
 ```
 $form_options = array(
-	'some_posts' => array(
-		'type' => 'apbf-multiselect',
-		'label' => __( 'Select some posts', 'widget-form-fields-text-domain' ),
-		'description' => __( 'Choose multiple posts of multiple types.' ),
-		'post_types' => array( 'post', 'page' ),
-		'default' => 'post',
-		'filter_post_types' => true,
-		'filter_taxonomies' => true,
-		'search_enabled' => true
-	)
+  'some_posts' => array(
+    'type' => 'apbf-multiselect',
+    'label' => __( 'Select some posts', 'widget-form-fields-text-domain' ),
+    'description' => __( 'Choose multiple posts of multiple types.' ),
+    'post_types' => array( 'post', 'page' ),
+    'default' => 'post',
+    'filter_post_types' => true,
+    'filter_taxonomies' => true,
+    'search_enabled' => true
+  )
 );
 ```
-
-
 
 ### APBF Toggle
 
@@ -80,15 +72,13 @@ $form_options = array(
 
 ```
 $form_options = array(
-	'some_boolean' => array(
-		'type' => 'apbf-toggle',
-		'label' => __( 'This thing', 'widget-form-fields-text-domain' ),
-		'description' => 'Turn this thing on.'
-	)
+  'some_boolean' => array(
+    'type' => 'apbf-toggle',
+    'label' => __( 'This thing', 'widget-form-fields-text-domain' ),
+    'description' => 'Turn this thing on.'
+  )
 );
 ```
-
-### 
 
 ### APBF Message
 
@@ -97,51 +87,47 @@ $form_options = array(
 
 ```
 $form_options = array(
-	'some_message' => array(
-		'type' => 'apbf-message',
-		'label' => __( 'This is an APBF Message field', 'widget-form-fields-text-domain' ),
-		'description' => 'Any information you wish to relay.'
-	)
+  'some_message' => array(
+    'type' => 'apbf-message',
+    'label' => __( 'This is an APBF Message field', 'widget-form-fields-text-domain' ),
+    'description' => 'Any information you wish to relay.'
+  )
 );
 ```
-
-### 
 
 ### APBF Tabs
 
 * label _(string)_ - Render a label for the field with the given value.
 * description _(string)_ - Render small italic text below the field to describe the field's purpose.
+* fields _(array)_ - The set of fields to be grouped together. This should contain any combination of other field types, even repeaters and sections.
 
 ```
 $form_options = array(
-	'some_tabs' => array(
-		'type' => 'apbf-tabs',
-			'fields' => array(
-				'tab1' => array(
-					'type' => 'apbf-tab',
-					'label' => __( 'The first tab', 'widget-form-fields-text-domain' ),
-				),
-				'some_text' => array(
-					'type' => 'text',
-					'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
-				),
-				'tab2' => array(
-					'type' => 'apbf-tab',
-					'label' => __( 'The second tab', 'widget-form-fields-text-domain' ),
-				),
-				'some_more_text' => array(
-					'type' => 'text',
-					'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
-				)
-			)
-		)
-	)
+  'some_tabs' => array(
+    'type' => 'apbf-tabs',
+    'fields' => array(
+      'tab1' => array(
+        'type' => 'apbf-tab',
+        'label' => __( 'The first tab', 'widget-form-fields-text-domain' ),
+      ),
+      'some_text' => array(
+        'type' => 'text',
+        'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
+      ),
+      'tab2' => array(
+        'type' => 'apbf-tab',
+        'label' => __( 'The second tab', 'widget-form-fields-text-domain' ),
+      ),
+      'some_more_text' => array(
+        'type' => 'text',
+        'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
+      )
+    )
+  )
 );
 ```
 
 _Note: Tabs are denoted via the pseudo-field type 'apbf-tab'._
-
-
 
 ## More Information
 
