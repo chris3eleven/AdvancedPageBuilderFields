@@ -1,0 +1,49 @@
+.apbf-toggle {
+	margin-right: 10px;
+
+	&__container {
+		align-items: center;
+		display: flex;
+		padding-top: 2px;
+	}
+
+	&__checkbox {
+		display: none!important;
+
+		&:checked {
+			&~.apbf-toggle__control {
+				background-color: #5897fb;
+
+				.apbf-toggle__button {
+					left: 26px;
+				}
+			}
+		}
+	}
+
+	&__control {
+		background-color: #f4f4f4;
+		border: 1px solid #7e8993;
+		border-radius: 16px;
+		height: 28px;
+		position: relative;
+		transition: background-color .2s;
+		width: 50px;
+	}
+
+	&__button {
+		background-color: #fff;
+		border: 1px solid #7e8993;
+		border-radius: 16px;
+		height: 20px;
+		left: 3px;
+		position: absolute;
+		top: 3px;
+		transition: left .2s;
+		width: 20px;
+	}
+
+	&__label {
+		font-weight: bold;
+	}
+}
